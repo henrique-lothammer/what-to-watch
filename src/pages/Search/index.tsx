@@ -8,6 +8,7 @@ import HeaderBar from 'components/HeaderBar'
 import PostersList from 'components/PostersList'
 
 import { IMovieList, IMovieListJSON } from 'components/PostersSection/types'
+import { colors } from 'styles/variables'
 import { Button, PageText, Pagination, Title } from './styles'
 
 const Search: React.FC = () => {
@@ -21,8 +22,6 @@ const Search: React.FC = () => {
   const [page, setPage] = useState(Number(queryParams.get('page')) || 1)
   const [totalPages, setTotalPages] = useState(0)
   const [total, setTotal] = useState(0)
-
-  console.log(query)
 
   useEffect(() => {
     async function searchMovie() {
@@ -39,14 +38,11 @@ const Search: React.FC = () => {
         } = response.data
         setMovies(
           results.map((movie: IMovieListJSON) => {
-            const posterUrl =
-              movie.poster_path &&
-              `${process.env.REACT_APP_TMDB_IMAGE_URL}/w185${movie.poster_path}`
             return {
               id: movie.id,
               title: movie.title,
               voteAverage: movie.vote_average,
-              posterUrl,
+              posterPath: movie.poster_path,
             }
           })
         )
@@ -90,7 +86,7 @@ const Search: React.FC = () => {
 
               <Pagination>
                 <Button type='button' onClick={prevPage} disabled={page === 1}>
-                  <FaChevronLeft color='#fff' size={20} />
+                  <FaChevronLeft color={colors.font} size={20} />
                 </Button>
                 <PageText>{`${page}/${totalPages}`}</PageText>
                 <Button
@@ -98,7 +94,7 @@ const Search: React.FC = () => {
                   onClick={nextPage}
                   disabled={page === totalPages}
                 >
-                  <FaChevronRight color='#fff' size={20} />
+                  <FaChevronRight color={colors.font} size={20} />
                 </Button>
               </Pagination>
             </>

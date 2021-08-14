@@ -15,6 +15,8 @@ import HeaderBar from 'components/HeaderBar'
 import Footer from 'components/Footer'
 import Score from 'components/Score'
 
+import noPicture from 'assets/no-picture.jpg'
+
 import { IMovieList } from 'components/PostersSection/types'
 import { colors } from 'styles/variables'
 import { IMovie, IMovieVideos } from './types'
@@ -102,13 +104,21 @@ const Details = (): ReactElement => {
       <main>
         {movie.title && (
           <Cover
-            background={`${process.env.REACT_APP_TMDB_IMAGE_URL}/original${movie.backdropPath}`}
+            background={
+              movie.backdropPath
+                ? `${process.env.REACT_APP_TMDB_IMAGE_URL}/original${movie.backdropPath}`
+                : ``
+            }
           >
             <div className='wrapper'>
               <Container>
                 <Score score={movie.voteAverage} top='20px' shadow={false} />
                 <Poster
-                  src={`${process.env.REACT_APP_TMDB_IMAGE_URL}/w185${movie.posterPath}`}
+                  src={
+                    movie.posterPath
+                      ? `${process.env.REACT_APP_TMDB_IMAGE_URL}/w185${movie.posterPath}`
+                      : noPicture
+                  }
                 />
                 <Description>
                   <h2>{`${movie.title}  (${movie.year})`}</h2>
@@ -126,6 +136,7 @@ const Details = (): ReactElement => {
                   <WatchLaterBtn
                     onClick={handleWatchLater}
                     watchLatered={!!watchLatered}
+                    title='Add to watch list'
                   >
                     <FaClock
                       color={watchLatered ? colors.active : colors.font}
@@ -133,7 +144,11 @@ const Details = (): ReactElement => {
                     />{' '}
                     Watch Later
                   </WatchLaterBtn>
-                  <FavoriteBtn onClick={handleFavorite} favorited={!!favorited}>
+                  <FavoriteBtn
+                    onClick={handleFavorite}
+                    favorited={!!favorited}
+                    title='Add to favorites'
+                  >
                     <FaStar
                       color={favorited ? colors.active : colors.font}
                       width={20}

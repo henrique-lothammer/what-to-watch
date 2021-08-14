@@ -24,12 +24,8 @@ const PosterSection = ({ section }: IProps): ReactElement => {
       try {
         const response = await Api.get(query)
         const { results } = response.data
-        console.log(results)
         setMovies(
           results.map((movie: IMovieListJSON) => {
-            // const posterUrl =
-            //   movie.poster_path &&
-            //   `${process.env.REACT_APP_TMDB_IMAGE_URL}/w185${movie.poster_path}`
             return {
               id: movie.id,
               title: movie.title,

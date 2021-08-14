@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { colors } from 'styles/variables'
 
 interface IContainerProps {
-  list: boolean
+  list: number
 }
 
 export const Container = styled.li`

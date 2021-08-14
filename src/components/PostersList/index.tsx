@@ -10,7 +10,6 @@ interface IProps {
 }
 
 const PostersList: React.FC<IProps> = ({ movies }: IProps) => {
-  console.log(movies)
   return (
     <Container>
       {movies.map((movie) => (

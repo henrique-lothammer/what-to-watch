@@ -21,14 +21,16 @@ const HeaderBar = (): ReactElement => {
   return (
     <Container>
       <div className='wrapper center'>
-        <LinkContainer to='/'>Logo</LinkContainer>
+        <LinkContainer to='/' title='Home'>
+          Wath to Watch?
+        </LinkContainer>
         <SearchBox />
         <ListsContainer>
-          <FavoriteBtn to='/favorites'>
+          <FavoriteBtn to='/favorites' title='Favorites'>
             <FaStar color={colors.font} width={20} />
             {favorites?.length ? <Counter>{favorites.length}</Counter> : ''}
           </FavoriteBtn>
-          <WatchLaterBtn to='/watchlater'>
+          <WatchLaterBtn to='/watchlater' title='Watch Later'>
             <FaClock color={colors.font} width={20} />
             {watchLater?.length ? <Counter>{watchLater?.length}</Counter> : ''}
           </WatchLaterBtn>
