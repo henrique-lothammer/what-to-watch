@@ -1,13 +1,14 @@
-[See it live](https://simplytictactoereact.netlify.app/)
-
 ## :computer: General info
-A tic tac toe made with ReactJS ( :
-	
+
+A website to search for movies when you don't know what to watch. ( :
+
 ## :rocket: Technologies
+
 Project is created with:
-* [ReactJS](https://reactjs.org/)
-* [Typescript](https://www.typescriptlang.org/)
-	
+
+- [ReactJS](https://reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+
 ## :triangular_ruler: Setup
 
 To run this project, install it locally using yarn:
