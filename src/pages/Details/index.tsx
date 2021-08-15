@@ -31,6 +31,7 @@ import {
   DescriptionText,
   ButtonsContainer,
   Video,
+  Warning,
 } from './styles'
 
 interface IParams {
@@ -52,6 +53,8 @@ const Details = (): ReactElement => {
 
   useEffect(() => {
     const getMovie = async () => {
+      setLoading(true)
+      setError('')
       try {
         const response = await Api.get(`/movie/${id}?append_to_response=videos`)
         const { data } = response
@@ -81,7 +84,7 @@ const Details = (): ReactElement => {
 
         setLoading(false)
       } catch (e) {
-        setError(e.message)
+        setError(`Ops! An error ocurred. Please, try again later. :(`)
         setLoading(false)
       }
     }
@@ -102,6 +105,8 @@ const Details = (): ReactElement => {
     <>
       <HeaderBar />
       <main>
+        {error && <Warning>{error}</Warning>}
+        {loading && <Warning>{loading}</Warning>}
         {movie.title && (
           <Cover
             background={

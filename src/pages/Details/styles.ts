@@ -14,6 +14,13 @@ interface IFavoriteProps {
   favorited: boolean
 }
 
+export const Warning = styled.h4`
+  text-align: center;
+  text-align: center;
+  padding: 10px;
+  font-weight: 500;
+`
+
 export const Cover = styled.div`
   background: url(${(props: IContainerProps) => props.background}) no-repeat
     center center;

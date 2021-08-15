@@ -9,7 +9,7 @@ import PostersList from 'components/PostersList'
 
 import { IMovieList, IMovieListJSON } from 'components/PostersSection/types'
 import { colors } from 'styles/variables'
-import { Button, PageText, Pagination, Title } from './styles'
+import { Button, PageText, Pagination, Title, Error } from './styles'
 
 const Search: React.FC = () => {
   const history = useHistory()
@@ -26,6 +26,7 @@ const Search: React.FC = () => {
   useEffect(() => {
     async function searchMovie() {
       setLoading(true)
+      setError('')
       try {
         const response = await Api.get(
           `/search/movie?query=${query}&page=${page}`
@@ -48,7 +49,7 @@ const Search: React.FC = () => {
         setTotal(totalResults)
         setTotalPages(pages)
       } catch (e) {
-        setError(e.message)
+        setError(`Ops! An error ocurred. Please, try again later. :(`)
       }
       setLoading(false)
     }
@@ -76,9 +77,9 @@ const Search: React.FC = () => {
       <div className='wrapper'>
         <main>
           <Title>
-            {`We found ${total} movies for `}
-            <span>{`"${query}"`}</span>.
+            {loading ? 'Loading...' : `We found ${total} movies for "${query}"`}
           </Title>
+          {error && <Error>{error}</Error>}
           {movies.length ? (
             <>
               <PostersList movies={movies} />

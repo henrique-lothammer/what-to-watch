@@ -4,7 +4,7 @@ import Api from 'services/Api'
 import Poster from '../Poster'
 
 import { IMovieList, IMovieListJSON } from './types'
-import { Container, Title, PosterList } from './styles'
+import { Container, Title, PosterList, Warning } from './styles'
 
 interface IProps {
   section: {
@@ -20,7 +20,9 @@ const PosterSection = ({ section }: IProps): ReactElement => {
   const { title, query } = section
 
   useEffect(() => {
+    setError('')
     const getMovies = async () => {
+      setLoading(true)
       try {
         const response = await Api.get(query)
         const { results } = response.data
@@ -35,7 +37,7 @@ const PosterSection = ({ section }: IProps): ReactElement => {
           })
         )
       } catch (e) {
-        setError(e.message)
+        setError(`Ops! An error ocurred. Please, try again later. :(`)
       }
       setLoading(false)
     }
@@ -45,8 +47,9 @@ const PosterSection = ({ section }: IProps): ReactElement => {
   return (
     <Container>
       <Title>{title}</Title>
-
       <PosterList>
+        {loading && <Warning>{loading}</Warning>}
+        {error && <Warning>{error}</Warning>}
         {movies.map((movie) => (
           <Poster key={movie.id} movie={movie} />
         ))}
