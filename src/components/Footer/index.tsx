@@ -4,7 +4,7 @@ import { Container } from './styles'
 
 const Footer = (): ReactElement => {
   return (
-    <Container>
+    <Container data-testid='footer'>
       Made with <span>&#x2764;</span>, TMDB and React
     </Container>
   )

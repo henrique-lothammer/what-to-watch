@@ -1,4 +1,4 @@
-import { IMovieList } from 'components/PostersSection/types'
+import { IMovieList } from 'components/types'
 
 const FAVORITES_STORAGE = '@favorites'
 const WATCH_LATER_STORAGE = '@watchLater'
@@ -11,7 +11,6 @@ export const removeFromFavorites = (id: number): void => {
     const newData = parsedData.filter((movie: IMovieList) => movie.id !== id)
 
     localStorage.setItem(FAVORITES_STORAGE, JSON.stringify(newData))
-    // SuccessToast({ title: 'The movie was removed from your favorites!' });
   }
 }
 
@@ -46,7 +45,6 @@ export const setFavorite = (movie: IMovieList): boolean => {
     localStorage.setItem(FAVORITES_STORAGE, JSON.stringify([movieToSave]))
   }
 
-  // SuccessToast({ title: 'The movie was added to your favorites!' })
   return true
 }
 
@@ -81,7 +79,6 @@ export const removeFromWatchLater = (id: number): void => {
     const newData = parsedData.filter((movie: IMovieList) => movie.id !== id)
 
     localStorage.setItem(WATCH_LATER_STORAGE, JSON.stringify(newData))
-    // SuccessToast({ title: 'The movie was removed from your favorites!' });
   }
 }
 
@@ -116,7 +113,6 @@ export const setWatchLater = (movie: IMovieList): boolean => {
     localStorage.setItem(WATCH_LATER_STORAGE, JSON.stringify([movieToSave]))
   }
 
-  // SuccessToast({ title: 'The movie was added to your favorites!' })
   return true
 }
 

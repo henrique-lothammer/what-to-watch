@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Component Should render 1`] = `
+NodeList [
+  Made with ,
+  <span>
+    ❤
+  </span>,
+  , TMDB and React,
+]
+`;

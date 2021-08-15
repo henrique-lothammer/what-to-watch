@@ -3,7 +3,7 @@ import React, { ReactElement, useEffect, useState } from 'react'
 import Api from 'services/Api'
 import Poster from '../Poster'
 
-import { IMovieList, IMovieListJSON } from './types'
+import { IMovieList, IMovieListJSON } from '../types'
 import { Container, Title, PosterList, Warning } from './styles'
 
 interface IProps {
@@ -45,7 +45,7 @@ const PosterSection = ({ section }: IProps): ReactElement => {
   }, [query])
 
   return (
-    <Container>
+    <Container data-testid='posters-section'>
       <Title>{title}</Title>
       <PosterList>
         {loading && <Warning>{loading}</Warning>}

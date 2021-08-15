@@ -7,13 +7,17 @@ import Footer from 'components/Footer'
 import HeaderBar from 'components/HeaderBar'
 import PostersList from 'components/PostersList'
 
-import { IMovieList, IMovieListJSON } from 'components/PostersSection/types'
+import { IMovieList, IMovieListJSON } from 'components/types'
 import { colors } from 'styles/variables'
 import { Button, PageText, Pagination, Title, Error } from './styles'
 
+const useQueryParams = () => {
+  return new URLSearchParams(useLocation().search)
+}
+
 const Search: React.FC = () => {
   const history = useHistory()
-  const queryParams = new URLSearchParams(useLocation().search)
+  const queryParams = useQueryParams()
   const query = queryParams.get('q')
 
   const [loading, setLoading] = useState(true)
@@ -25,6 +29,9 @@ const Search: React.FC = () => {
 
   useEffect(() => {
     async function searchMovie() {
+      if (!query) {
+        history.push(`/`)
+      }
       setLoading(true)
       setError('')
       try {
@@ -36,6 +43,7 @@ const Search: React.FC = () => {
           total_results: totalResults,
           total_pages: pages,
         } = response.data
+
         setMovies(
           results.map((movie: IMovieListJSON) => {
             return {
@@ -46,6 +54,7 @@ const Search: React.FC = () => {
             }
           })
         )
+
         setTotal(totalResults)
         setTotalPages(pages)
       } catch (e) {
@@ -54,7 +63,7 @@ const Search: React.FC = () => {
       setLoading(false)
     }
     searchMovie()
-  }, [query, page])
+  }, [query, page, history])
 
   const prevPage = () => {
     const p = page - 1
@@ -76,37 +85,41 @@ const Search: React.FC = () => {
       <HeaderBar />
       <div className='wrapper'>
         <main>
-          <Title>
-            {loading ? 'Loading...' : `We found ${total} movies for "${query}"`}
-          </Title>
-          {error && <Error>{error}</Error>}
-          {movies.length ? (
-            <>
-              <PostersList movies={movies} />
+          <div data-testid='search-page'>
+            <Title>
+              {loading
+                ? 'Loading...'
+                : `We found ${total} movies for "${query}"`}
+            </Title>
+            {error && <Error>{error}</Error>}
+            {movies.length ? (
+              <>
+                <PostersList movies={movies} />
 
-              <Pagination>
-                <Button
-                  type='button'
-                  onClick={prevPage}
-                  disabled={page === 1}
-                  title='Previous Page'
-                >
-                  <FaChevronLeft color={colors.font} size={20} />
-                </Button>
-                <PageText>{`${page}/${totalPages}`}</PageText>
-                <Button
-                  type='button'
-                  onClick={nextPage}
-                  disabled={page === totalPages}
-                  title='Next Page'
-                >
-                  <FaChevronRight color={colors.font} size={20} />
-                </Button>
-              </Pagination>
-            </>
-          ) : (
-            ''
-          )}
+                <Pagination>
+                  <Button
+                    type='button'
+                    onClick={prevPage}
+                    disabled={page === 1}
+                    title='Previous Page'
+                  >
+                    <FaChevronLeft color={colors.font} size={20} />
+                  </Button>
+                  <PageText>{`${page}/${totalPages}`}</PageText>
+                  <Button
+                    type='button'
+                    onClick={nextPage}
+                    disabled={page === totalPages}
+                    title='Next Page'
+                  >
+                    <FaChevronRight color={colors.font} size={20} />
+                  </Button>
+                </Pagination>
+              </>
+            ) : (
+              ''
+            )}
+          </div>
         </main>
       </div>
       <Footer />

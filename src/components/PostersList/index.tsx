@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Poster from 'components/Poster'
-import { IMovieList } from 'components/PostersSection/types'
+import { IMovieList } from 'components/types'
 
 import { Container } from './styles'
 
@@ -11,7 +11,7 @@ interface IProps {
 
 const PostersList: React.FC<IProps> = ({ movies }: IProps) => {
   return (
-    <Container>
+    <Container data-testid='posters-list'>
       {movies.map((movie) => (
         <Poster key={movie.id} movie={movie} list />
       ))}

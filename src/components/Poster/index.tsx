@@ -5,7 +5,7 @@ import Score from 'components/Score'
 
 import noPicture from 'assets/no-picture.jpg'
 
-import { IMovieList } from '../PostersSection/types'
+import { IMovieList } from '../types'
 import { Container, Title, Picture } from './styles'
 
 export interface IProp {

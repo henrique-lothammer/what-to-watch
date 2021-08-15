@@ -13,7 +13,7 @@ const Favorites: React.FC = () => {
     <>
       <HeaderBar />
       <div className='wrapper'>
-        <main>
+        <main data-testid='favorites'>
           <Title>My Favorites</Title>
           {movies ? (
             <>

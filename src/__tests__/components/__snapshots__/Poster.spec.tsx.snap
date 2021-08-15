@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Poster Component should render 1`] = `
+<li
+  class="sc-gtsrHT kIuOrA"
+  list="0"
+  title="Movie test"
+>
+  <div
+    class="sc-bdnxRM jcUBhS"
+  >
+    8
+  </div>
+  <div
+    class="sc-dlnjwi irqes"
+  >
+    <img
+      alt="Movie test"
+      src="https://image.tmdb.org/t/p/w185teste.path"
+    />
+  </div>
+  <article
+    class="sc-hKFxyN kUoGKW"
+  >
+    <h3>
+      Movie test
+    </h3>
+  </article>
+</li>
+`;

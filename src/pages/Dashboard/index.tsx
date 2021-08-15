@@ -27,7 +27,7 @@ const Dashboard = (): ReactElement => {
   return (
     <>
       <HeaderBar />
-      <main>
+      <main data-testid='dashboard'>
         <div className='wrapper'>
           {sections.map((section) => (
             <PostersSection key={section.title} section={section} />

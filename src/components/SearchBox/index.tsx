@@ -11,11 +11,12 @@ const SearchBox = (): ReactElement => {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
+    if (!input) return
     history.push(`/search?q=${input}`)
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} data-testid='search-box'>
       <Input
         type='text'
         placeholder='Type the name of the movie'

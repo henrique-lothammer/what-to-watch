@@ -17,9 +17,9 @@ import Score from 'components/Score'
 
 import noPicture from 'assets/no-picture.jpg'
 
-import { IMovieList } from 'components/PostersSection/types'
+import { IMovieList } from 'components/types'
 import { colors } from 'styles/variables'
-import { IMovie, IMovieVideos } from './types'
+import { IMovie, IMovieVideos } from '../types'
 import {
   Container,
   Cover,
@@ -104,7 +104,7 @@ const Details = (): ReactElement => {
   return (
     <>
       <HeaderBar />
-      <main>
+      <main data-testid='details'>
         {error && <Warning>{error}</Warning>}
         {loading && <Warning>{loading}</Warning>}
         {movie.title && (

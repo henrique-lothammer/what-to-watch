@@ -13,7 +13,7 @@ const WatchLater: React.FC = () => {
     <>
       <HeaderBar />
       <div className='wrapper'>
-        <main>
+        <main data-testid='watch-later'>
           <Title>Movies to Watch Later</Title>
           {movies ? (
             <>
