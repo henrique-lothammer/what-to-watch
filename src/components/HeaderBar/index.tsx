@@ -4,6 +4,7 @@ import { FaStar, FaClock } from 'react-icons/fa'
 import SearchBox from 'components/SearchBox'
 import { getAllFavorites, getAllWatchLater } from 'services/Storage'
 
+import logo from 'assets/logo.png'
 import { colors } from 'styles/variables'
 import {
   Container,
@@ -22,7 +23,7 @@ const HeaderBar = (): ReactElement => {
     <Container>
       <div className='wrapper center'>
         <LinkContainer to='/' title='Home'>
-          Wath to Watch?
+          <img src={logo} alt='Wath to Watch?' />
         </LinkContainer>
         <SearchBox />
         <ListsContainer>

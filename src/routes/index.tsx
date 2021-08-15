@@ -6,6 +6,7 @@ import Details from 'pages/Details'
 import Search from 'pages/Search'
 import Favorites from 'pages/Favorites'
 import WatchLater from 'pages/WatchLater'
+import NotFound from 'pages/NotFound'
 
 const Routes = (): React.ReactElement => {
   return (
@@ -16,6 +17,7 @@ const Routes = (): React.ReactElement => {
         <Route path='/search' component={Search} />
         <Route path='/favorites' component={Favorites} />
         <Route path='/watchlater' component={WatchLater} />
+        <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
   )

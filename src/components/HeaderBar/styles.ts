@@ -17,6 +17,12 @@ export const LinkContainer = styled(Link)`
   font-size: 1.6rem;
   width: 60px;
   margin-right: 10px;
+  img {
+    width: 100px;
+    @media only screen and (max-width: 768px) {
+      width: 70px;
+    }
+  }
 `
 
 export const FavoriteBtn = styled(Link)`
