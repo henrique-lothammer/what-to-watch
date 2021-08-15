@@ -5,7 +5,7 @@ import HeaderBar from 'components/HeaderBar'
 import PostersList from 'components/PostersList'
 
 import { getAllFavorites } from 'services/Storage'
-import { Title } from './styles'
+import { Title, Warning } from './styles'
 
 const Favorites: React.FC = () => {
   const movies = getAllFavorites()
@@ -15,12 +15,12 @@ const Favorites: React.FC = () => {
       <div className='wrapper'>
         <main data-testid='favorites'>
           <Title>My Favorites</Title>
-          {movies ? (
+          {movies?.length ? (
             <>
               <PostersList movies={movies} />
             </>
           ) : (
-            ''
+            <Warning>no movies found : (</Warning>
           )}
         </main>
       </div>
