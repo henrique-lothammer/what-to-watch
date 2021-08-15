@@ -20,12 +20,11 @@ const Search: React.FC = () => {
   const [error, setError] = useState('')
   const [movies, setMovies] = useState<IMovieList[]>([] as IMovieList[])
   const [page, setPage] = useState(Number(queryParams.get('page')) || 1)
-  const [totalPages, setTotalPages] = useState(0)
+  const [totalPages, setTotalPages] = useState(() => 0)
   const [total, setTotal] = useState(0)
 
   useEffect(() => {
     async function searchMovie() {
-      setTotalPages(0)
       setLoading(true)
       try {
         const response = await Api.get(
@@ -85,7 +84,12 @@ const Search: React.FC = () => {
               <PostersList movies={movies} />
 
               <Pagination>
-                <Button type='button' onClick={prevPage} disabled={page === 1}>
+                <Button
+                  type='button'
+                  onClick={prevPage}
+                  disabled={page === 1}
+                  title='Previous Page'
+                >
                   <FaChevronLeft color={colors.font} size={20} />
                 </Button>
                 <PageText>{`${page}/${totalPages}`}</PageText>
@@ -93,6 +97,7 @@ const Search: React.FC = () => {
                   type='button'
                   onClick={nextPage}
                   disabled={page === totalPages}
+                  title='Next Page'
                 >
                   <FaChevronRight color={colors.font} size={20} />
                 </Button>

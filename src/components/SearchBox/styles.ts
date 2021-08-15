@@ -14,7 +14,7 @@ export const Form = styled.form`
 export const Input = styled.input`
   font-size: 1.6rem;
   width: 100%;
-  padding: 5px;
+  padding: 8px 5px;
   border: none;
   border-radius: 3px 0 0 3px;
   &::placeholder {
@@ -27,7 +27,7 @@ export const Input = styled.input`
 export const SubmitButton = styled.button`
   max-width: 50px;
   border-radius: 0 3px 3px 0;
-  padding: 5px;
+  padding: 7px 5px;
   border: none;
   display: flex;
   justify-content: center;

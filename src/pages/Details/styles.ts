@@ -24,6 +24,10 @@ export const Cover = styled.div`
   height: 300px;
   position: relative;
   margin-bottom: 20px;
+
+  @media only screen and (max-width: 900px) {
+    height: auto;
+  }
 `
 
 export const Container = styled.section`
@@ -32,6 +36,11 @@ export const Container = styled.section`
   margin-top: 40px;
   padding-bottom: 5px;
   position: relative;
+
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 export const Poster = styled.img`
@@ -108,6 +117,26 @@ export const Video = styled.iframe`
   margin: 10px;
   width: 728px;
   height: 341px;
+  @media only screen and (max-width: 320px) {
+    width: 250px;
+    height: 120px;
+  }
+  @media only screen and (min-width: 321px) and (max-width: 375px) {
+    width: 300px;
+    height: 140px;
+  }
+  @media only screen and (min-width: 376px) and (max-width: 425px) {
+    width: 336px;
+    height: 157px;
+  }
+  @media only screen and (min-width: 426px) and (max-width: 767px) {
+    width: 386px;
+    height: 181px;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    width: 728px;
+    height: 341px;
+  }
 `
 export const Score = styled.div`
   background: ${colors.primary};

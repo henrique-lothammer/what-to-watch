@@ -24,7 +24,8 @@ export default createGlobalStyle`
         color: ${colors.font};
         font-family: Roboto, Arial, Helvetica, sans-serif;
         font-size: 1.6rem;
-        min-width: 360px;
+        min-width: 320px;
+        width:100%;
         min-height: 100vh;
     }
     #root{
@@ -43,8 +44,10 @@ export default createGlobalStyle`
     }
 
     .wrapper{
+      width: 100%;
       max-width: 900px;
       margin:auto;
+      padding: 0 10px;
       &.center{
         display: flex;
         align-items: center;
@@ -59,6 +62,7 @@ export default createGlobalStyle`
     }
 
     main{
+      width: 100%;
       padding: 70px 0;
     }
 
