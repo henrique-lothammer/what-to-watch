@@ -21,12 +21,12 @@ Project created with:
 - [Typescript](https://www.typescriptlang.org/)
 - [Styled Components](https://styled-components.com/)
 - [Axios](https://github.com/axios/axios)
-- [React Router Dom](https://reacttraining.com/react-router/web/guides/quick-start)
+- [React Router Dom](https://reactrouter.com/web/guides/quick-start)
 - [Jest](https://jestjs.io/pt-BR/)
 
 ## :triangular_ruler: Setup
 
-First, you have to create a `.env` file to your root directory (base on `.example.env` file in root directory) with your API Read Access Token (v4 auth) from [The Movie DB](https://www.themoviedb.org/documentation/api) and you're done.
+First, you have to create a `.env` file to your root directory (based on `.example.env` file in root directory) with your API Read Access Token (v4 auth) from [The Movie DB](https://www.themoviedb.org/documentation/api).
 
 Then, to run this project, install it locally using yarn:
 

@@ -19,7 +19,7 @@ const SearchBox = (): ReactElement => {
     <Form onSubmit={handleSubmit} data-testid='search-box'>
       <Input
         type='text'
-        placeholder='Type the name of the movie'
+        placeholder='enter the movie name'
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
