@@ -68,7 +68,7 @@ exports[`Watch Later Page Should render 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #77a904;
+  background: #6e9a0b;
 }
 
 .c0 {
@@ -101,6 +101,15 @@ exports[`Watch Later Page Should render 1`] = `
   width: 30px;
 }
 
+.c6:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.c6:hover svg {
+  color: #ff0;
+}
+
 .c7 {
   display: block;
   position: relative;
@@ -109,6 +118,15 @@ exports[`Watch Later Page Should render 1`] = `
 
 .c7 svg {
   width: 30px;
+}
+
+.c7:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.c7:hover svg {
+  color: #ff0;
 }
 
 .c5 {
@@ -132,7 +150,7 @@ exports[`Watch Later Page Should render 1`] = `
 }
 
 .c10 {
-  background: #77a904;
+  background: #6e9a0b;
   color: #FFF;
   position: absolute;
   padding: 5px;
@@ -231,6 +249,8 @@ exports[`Watch Later Page Should render 1`] = `
   -ms-flex-pack: space-around;
   justify-content: space-around;
   width: 152px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .c17 {
@@ -256,6 +276,8 @@ exports[`Watch Later Page Should render 1`] = `
   -ms-flex-pack: space-around;
   justify-content: space-around;
   width: 119px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .c15 {
@@ -392,12 +414,11 @@ exports[`Watch Later Page Should render 1`] = `
           title="Favorites"
         >
           <svg
-            color="#FFF"
+            color=""
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            style="color: rgb(255, 255, 255);"
             viewBox="0 0 576 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
@@ -414,12 +435,11 @@ exports[`Watch Later Page Should render 1`] = `
           title="Watch Later"
         >
           <svg
-            color="#FFF"
+            color=""
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            style="color: rgb(255, 255, 255);"
             viewBox="0 0 512 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"

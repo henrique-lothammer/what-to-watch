@@ -2,7 +2,7 @@
 
 exports[`Poster Component should render 1`] = `
 .c1 {
-  background: #77a904;
+  background: #6e9a0b;
   color: #FFF;
   position: absolute;
   padding: 5px;
@@ -39,6 +39,16 @@ exports[`Poster Component should render 1`] = `
   margin-left: 0;
 }
 
+.c0:hover img {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.c0:hover article {
+  background: #6e9a0b;
+}
+
 .c2 {
   width: 185px;
   height: 255px;
@@ -61,8 +71,17 @@ exports[`Poster Component should render 1`] = `
   overflow: hidden;
 }
 
+.c2 img {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
 .c3 {
   color: #FFF;
+  background: #196774;
   font-weight: bold;
   width: 100%;
   height: 75px;
@@ -79,6 +98,8 @@ exports[`Poster Component should render 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .c3 h3 {
