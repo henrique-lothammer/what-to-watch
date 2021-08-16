@@ -1,8 +1,11 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, waitFor } from '@testing-library/react'
 import PostersSection from 'components/PostersSection'
 import Api from 'services/Api'
-import { AxiosResponse } from 'axios'
+import axios, { AxiosResponse } from 'axios'
+
+jest.mock('services/Api')
+const mockedAxios = Api as jest.Mocked<typeof axios>
 
 jest.mock('services/Api')
 
@@ -13,8 +16,6 @@ describe('PostersSection Component', () => {
   }
 
   it('Should render', async () => {
-    const { getByTestId } = render(<PostersSection section={section} />)
-
     const response = {
       results: [
         {
@@ -22,7 +23,7 @@ describe('PostersSection Component', () => {
           popularity: 10312.289,
           poster_path: '/iCi4c4FvVdbaU1t8poH1gvzT6xM.jpg',
           release_date: '2021-07-28',
-          title: 'The Suicide Squad',
+          title: 'Star Wars',
           video: false,
           vote_average: 8.1,
           vote_count: 2036,
@@ -38,10 +39,17 @@ describe('PostersSection Component', () => {
       config: {},
     }
 
-    Api.get.mockResolvedValueOnce(mockedResponse)
+    mockedAxios.get.mockResolvedValueOnce(mockedResponse)
+
+    const { getByTestId, getByText } = render(
+      <PostersSection section={section} />
+    )
 
     const element = getByTestId(/posters-section/i)
     expect(element).toBeInTheDocument()
-    expect(Api.get).toHaveBeenCalledWith(section.query)
+    expect(mockedAxios.get).toHaveBeenCalledWith(section.query)
+    await waitFor(() => {
+      expect(getByText(/Star Wars/)).toBeInTheDocument()
+    })
   })
 })

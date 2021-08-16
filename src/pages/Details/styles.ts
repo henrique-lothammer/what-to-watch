@@ -68,6 +68,7 @@ export const Description = styled.article`
 export const DescriptionItems = styled.ul`
   display: flex;
   padding: 10px 0;
+  flex-wrap: wrap;
   li {
     margin-right: 18px;
   }
@@ -77,6 +78,9 @@ export const DescriptionText = styled.div`
   height: 205px;
   padding-top: 10px;
   overflow: auto;
+  @media only screen and (max-width: 900px) {
+    margin-bottom: 16px;
+  }
 `
 
 export const WatchLaterBtn = styled.button`

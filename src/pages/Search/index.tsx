@@ -102,6 +102,7 @@ const Search: React.FC = () => {
                     onClick={prevPage}
                     disabled={page === 1}
                     title='Previous Page'
+                    data-testid='search-page-prev'
                   >
                     <FaChevronLeft color={colors.font} size={20} />
                   </Button>
@@ -111,6 +112,7 @@ const Search: React.FC = () => {
                     onClick={nextPage}
                     disabled={page === totalPages}
                     title='Next Page'
+                    data-testid='search-page-next'
                   >
                     <FaChevronRight color={colors.font} size={20} />
                   </Button>

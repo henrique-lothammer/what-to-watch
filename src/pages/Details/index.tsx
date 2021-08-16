@@ -45,7 +45,7 @@ const Details = (): ReactElement => {
   const [favorited, setFavorited] = useState<IMovieList | null>(() =>
     getFavorite(Number(id))
   )
-  const [watchLatered, setWatchLatered] = useState<IMovieList | null>(() =>
+  const [doWatchLater, setDoWatchLater] = useState<IMovieList | null>(() =>
     getWatchLater(Number(id))
   )
   const [loading, setLoading] = useState(true)
@@ -93,7 +93,7 @@ const Details = (): ReactElement => {
 
   const handleWatchLater = async () => {
     await setWatchLater(movie)
-    setWatchLatered(getWatchLater(Number(id)))
+    setDoWatchLater(getWatchLater(Number(id)))
   }
 
   const handleFavorite = async () => {
@@ -140,11 +140,11 @@ const Details = (): ReactElement => {
                 <ButtonsContainer>
                   <WatchLaterBtn
                     onClick={handleWatchLater}
-                    watchLatered={!!watchLatered}
+                    watchLatered={!!doWatchLater}
                     title='Add to watch list'
                   >
                     <FaClock
-                      color={watchLatered ? colors.active : colors.font}
+                      color={doWatchLater ? colors.active : colors.font}
                       width={20}
                     />{' '}
                     Watch Later

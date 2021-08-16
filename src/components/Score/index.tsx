@@ -20,7 +20,7 @@ const Score = ({
   score,
 }: IProps): ReactElement => {
   return (
-    <Container shadow={shadow} top={top}>
+    <Container shadow={shadow} top={top} data-testid='score'>
       {score}
     </Container>
   )
