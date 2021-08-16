@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useHistory } from 'react-router-dom'
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
 import Api from 'services/Api'
 import Footer from 'components/Footer'
 import HeaderBar from 'components/HeaderBar'
 import PostersList from 'components/PostersList'
+import Pagination from 'components/Pagination'
 
 import { IMovieList, IMovieListJSON } from 'components/types'
-import { colors } from 'styles/variables'
-import { Button, PageText, Pagination, Title, Error } from './styles'
+import { Title, Error } from './styles'
 
-const useQueryParams = () => {
-  return new URLSearchParams(useLocation().search)
-}
+const useQueryParams = () => new URLSearchParams(useLocation().search)
 
 const Search: React.FC = () => {
   const history = useHistory()
@@ -29,9 +26,7 @@ const Search: React.FC = () => {
 
   useEffect(() => {
     async function searchMovie() {
-      if (!query) {
-        history.push(`/`)
-      }
+      if (!query) history.push(`/`)
       setLoading(true)
       setError('')
       try {
@@ -65,19 +60,13 @@ const Search: React.FC = () => {
     searchMovie()
   }, [query, page, history])
 
-  const prevPage = () => {
-    const p = page - 1
-    if (p > 0) {
-      setPage(p)
-      history.push(`/search?q=${query}&page=${p}`)
-    }
+  const prevPage = (p: number) => {
+    setPage(p)
+    history.push(`/search?q=${query}&page=${p}`)
   }
-  const nextPage = () => {
-    const p = page + 1
-    if (p <= totalPages) {
-      setPage(p)
-      history.push(`/search?q=${query}&page=${p}`)
-    }
+  const nextPage = (p: number) => {
+    setPage(p)
+    history.push(`/search?q=${query}&page=${p}`)
   }
 
   return (
@@ -96,27 +85,12 @@ const Search: React.FC = () => {
               <>
                 <PostersList movies={movies} />
 
-                <Pagination>
-                  <Button
-                    type='button'
-                    onClick={prevPage}
-                    disabled={page === 1}
-                    title='Previous Page'
-                    data-testid='search-page-prev'
-                  >
-                    <FaChevronLeft color={colors.font} size={20} />
-                  </Button>
-                  <PageText>{`${page}/${totalPages}`}</PageText>
-                  <Button
-                    type='button'
-                    onClick={nextPage}
-                    disabled={page === totalPages}
-                    title='Next Page'
-                    data-testid='search-page-next'
-                  >
-                    <FaChevronRight color={colors.font} size={20} />
-                  </Button>
-                </Pagination>
+                <Pagination
+                  prevPage={prevPage}
+                  nextPage={nextPage}
+                  totalPages={totalPages}
+                  page={page}
+                />
               </>
             ) : (
               ''
