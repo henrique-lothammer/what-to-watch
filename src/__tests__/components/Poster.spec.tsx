@@ -3,6 +3,7 @@ import { render, cleanup, fireEvent } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
 import { Router } from 'react-router-dom'
 import Poster from 'components/Poster'
+import 'jest-styled-components'
 
 describe('Poster Component', () => {
   afterEach(cleanup)
@@ -15,7 +16,7 @@ describe('Poster Component', () => {
 
   it('should render', () => {
     const history = createMemoryHistory()
-    const { getByText } = render(
+    const { container, getByText } = render(
       <Router history={history}>
         <Poster movie={movie} />
       </Router>
@@ -23,7 +24,7 @@ describe('Poster Component', () => {
 
     const element = getByText(/Movie test/i)
     expect(element).toBeInTheDocument()
-    // expect(container.firstChild).toMatchSnapshot()
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should navigate to the details page when clicked', () => {

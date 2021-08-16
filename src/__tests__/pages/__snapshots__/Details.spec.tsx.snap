@@ -1,0 +1,560 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Watch Later Page Should render 1`] = `
+.c2 {
+  width: 400px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background: #196774;
+  padding: 10px 10px;
+}
+
+.c3 {
+  font-size: 1.6rem;
+  width: 100%;
+  padding: 8px 5px;
+  border: none;
+  border-radius: 3px 0 0 3px;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #ccc;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.c3::-moz-placeholder {
+  color: #ccc;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.c3:-ms-input-placeholder {
+  color: #ccc;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.c3::placeholder {
+  color: #ccc;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.c4 {
+  max-width: 50px;
+  border-radius: 0 3px 3px 0;
+  padding: 7px 5px;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #77a904;
+}
+
+.c0 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background: #196774;
+  padding: 10px 10px;
+  z-index: 99;
+}
+
+.c1 {
+  font-size: 1.6rem;
+  width: 60px;
+  margin-right: 10px;
+}
+
+.c1 img {
+  width: 100px;
+}
+
+.c6 {
+  display: block;
+  position: relative;
+  margin: 0 5px;
+}
+
+.c6 svg {
+  width: 30px;
+}
+
+.c7 {
+  display: block;
+  position: relative;
+  margin: 0 5px;
+}
+
+.c7 svg {
+  width: 30px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c19 {
+  padding: 10px 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.c19 span {
+  color: red;
+}
+
+.c10 {
+  background: #77a904;
+  color: #FFF;
+  position: absolute;
+  padding: 5px;
+  border-radius: 100%;
+  top: 20px;
+  right: 5px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+}
+
+.c8 {
+  background: url() no-repeat center center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 2000px rgb(0 0 0 / 71%);
+  width: 100%;
+  width: 100%;
+  height: 300px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.c9 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 40px;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.c11 {
+  width: 185px;
+  height: 278px;
+  background: #ddd;
+  border-radius: 4px;
+  border: 0;
+  outline: 0;
+  margin-top: -25px;
+}
+
+.c12 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 0;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c13 li {
+  margin-right: 18px;
+}
+
+.c14 {
+  height: 205px;
+  padding-top: 10px;
+  overflow: auto;
+}
+
+.c16 {
+  background: #34a6b0;
+  font-size: 1.8rem;
+  line-height: 2rem;
+  padding: 10px 8px;
+  border: none;
+  border-radius: 3px;
+  color: #FFF;
+  font-weight: bold;
+  margin-right: 5px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  width: 152px;
+}
+
+.c17 {
+  background: #34a6b0;
+  font-size: 1.8rem;
+  line-height: 2rem;
+  padding: 10px 8px;
+  border: none;
+  border-radius: 3px;
+  color: #FFF;
+  font-weight: bold;
+  margin-right: 5px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  width: 119px;
+}
+
+.c15 {
+  position: absolute;
+  bottom: -23px;
+  right: 0;
+}
+
+.c18 {
+  margin: 10px;
+  width: 728px;
+  height: 341px;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 img {
+    width: 70px;
+  }
+}
+
+@media only screen and (max-width:900px) {
+  .c8 {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width:900px) {
+  .c9 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width:900px) {
+  .c14 {
+    margin-bottom: 16px;
+  }
+}
+
+@media only screen and (max-width:320px) {
+  .c18 {
+    width: 250px;
+    height: 120px;
+  }
+}
+
+@media only screen and (min-width:321px) and (max-width:375px) {
+  .c18 {
+    width: 300px;
+    height: 140px;
+  }
+}
+
+@media only screen and (min-width:376px) and (max-width:425px) {
+  .c18 {
+    width: 336px;
+    height: 157px;
+  }
+}
+
+@media only screen and (min-width:426px) and (max-width:767px) {
+  .c18 {
+    width: 386px;
+    height: 181px;
+  }
+}
+
+@media only screen and (min-width:768px) and (max-width:1024px) {
+  .c18 {
+    width: 728px;
+    height: 341px;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="wrapper center"
+    >
+      <a
+        class="c1"
+        href="/"
+        title="Home"
+      >
+        <img
+          alt="Wath to Watch?"
+          src="logo.png"
+        />
+      </a>
+      <form
+        class="c2"
+        data-testid="search-box"
+      >
+        <input
+          class="c3"
+          placeholder="enter the movie name"
+          type="text"
+          value=""
+        />
+        <button
+          class="c4"
+          type="submit"
+        >
+          <svg
+            color="#FFF"
+            fill="currentColor"
+            height="20"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: rgb(255, 255, 255);"
+            viewBox="0 0 512 512"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+            />
+          </svg>
+        </button>
+      </form>
+      <div
+        class="c5"
+      >
+        <a
+          class="c6"
+          href="/favorites"
+          title="Favorites"
+        >
+          <svg
+            color="#FFF"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: rgb(255, 255, 255);"
+            viewBox="0 0 576 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+            />
+          </svg>
+          
+        </a>
+        <a
+          class="c7"
+          href="/watchlater"
+          title="Watch Later"
+        >
+          <svg
+            color="#FFF"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: rgb(255, 255, 255);"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"
+            />
+          </svg>
+          
+        </a>
+      </div>
+    </div>
+  </div>
+  <main
+    data-testid="details"
+  >
+    
+    <div
+      class="c8"
+    >
+      <div
+        class="wrapper"
+      >
+        <section
+          class="c9"
+        >
+          <div
+            class="c10"
+            data-testid="score"
+          >
+            8.1
+          </div>
+          <img
+            class="c11"
+            src="https://image.tmdb.org/t/p/w185/iCi4c4FvVdbaU1t8poH1gvzT6xM.jpg"
+          />
+          <article
+            class="c12"
+          >
+            <h2>
+              Star Wars  (2021)
+            </h2>
+            <ul
+              class="c13"
+            >
+              <li>
+                undefined min
+              </li>
+              <li>
+                Drama
+              </li>
+              <li>
+                Comedy
+              </li>
+            </ul>
+            <div
+              class="c14"
+            >
+              <p>
+                No overview provided.
+              </p>
+            </div>
+          </article>
+          <div
+            class="c15"
+          >
+            <button
+              class="c16"
+              title="Add to watch list"
+            >
+              <svg
+                color="#FFF"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                style="color: rgb(255, 255, 255);"
+                viewBox="0 0 512 512"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"
+                />
+              </svg>
+               
+              Watch Later
+            </button>
+            <button
+              class="c17"
+              title="Add to favorites"
+            >
+              <svg
+                color="#FFF"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                style="color: rgb(255, 255, 255);"
+                viewBox="0 0 576 512"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                />
+              </svg>
+               
+              Favorite
+            </button>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div
+      class="wrapper center-colum"
+    >
+      <iframe
+        allowfullscreen=""
+        class="c18 youtube-player"
+        frameborder="0"
+        src="https://www.youtube.com/embed/youtube-key?autoplay=0"
+        title="YouTube"
+      />
+    </div>
+  </main>
+  <div
+    class="c19"
+    data-testid="footer"
+  >
+    Made with 
+    <span>
+      ❤
+    </span>
+    , TMDB and React
+  </div>
+</div>
+`;

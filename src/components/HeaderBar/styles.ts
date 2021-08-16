@@ -32,6 +32,12 @@ export const FavoriteBtn = styled(Link)`
   svg {
     width: 30px;
   }
+  &:hover {
+    transition: 0.2s;
+    svg {
+      color: ${colors.active};
+    }
+  }
 `
 
 export const WatchLaterBtn = styled(Link)`
@@ -40,6 +46,12 @@ export const WatchLaterBtn = styled(Link)`
   margin: 0 5px;
   svg {
     width: 30px;
+  }
+  &:hover {
+    transition: 0.2s;
+    svg {
+      color: ${colors.active};
+    }
   }
 `
 

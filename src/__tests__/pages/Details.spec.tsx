@@ -5,6 +5,7 @@ import { createMemoryHistory } from 'history'
 import Details from 'pages/Details'
 import Api from 'services/Api'
 import axios, { AxiosResponse } from 'axios'
+import 'jest-styled-components'
 
 jest.mock('services/Api')
 const mockedAxios = Api as jest.Mocked<typeof axios>
@@ -39,7 +40,7 @@ describe('Watch Later Page', () => {
     const id = 1
     const history = createMemoryHistory()
     history.push(`/details/${id}`)
-    const { getByTestId, getByText } = render(
+    const { container, getByTestId, getByText } = render(
       <MemoryRouter initialEntries={[`/details/${id}`]} initialIndex={0}>
         <Route path='/details/:id'>
           <Details />
@@ -54,6 +55,7 @@ describe('Watch Later Page', () => {
     )
     await waitFor(() => {
       expect(getByText(/Star Wars/)).toBeInTheDocument()
+      expect(container).toMatchSnapshot()
     })
   })
 })

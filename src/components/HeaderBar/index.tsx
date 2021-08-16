@@ -4,8 +4,8 @@ import { FaStar, FaClock } from 'react-icons/fa'
 import SearchBox from 'components/SearchBox'
 import { getAllFavorites, getAllWatchLater } from 'services/Storage'
 
-import logo from 'assets/logo.png'
 import { colors } from 'styles/variables'
+import logo from 'assets/logo.png'
 import {
   Container,
   LinkContainer,
@@ -15,7 +15,15 @@ import {
   ListsContainer,
 } from './styles'
 
-const HeaderBar = (): ReactElement => {
+interface IProps {
+  isFavoritePage?: boolean
+  isWatchLaterPage?: boolean
+}
+
+const HeaderBar = ({
+  isFavoritePage = false,
+  isWatchLaterPage = false,
+}: IProps): ReactElement => {
   const favorites = getAllFavorites()
   const watchLater = getAllWatchLater()
 
@@ -28,11 +36,11 @@ const HeaderBar = (): ReactElement => {
         <SearchBox />
         <ListsContainer>
           <FavoriteBtn to='/favorites' title='Favorites'>
-            <FaStar color={colors.font} width={20} />
+            <FaStar width={20} color={isFavoritePage ? colors.active : ''} />
             {favorites?.length ? <Counter>{favorites.length}</Counter> : ''}
           </FavoriteBtn>
           <WatchLaterBtn to='/watchlater' title='Watch Later'>
-            <FaClock color={colors.font} width={20} />
+            <FaClock width={20} color={isWatchLaterPage ? colors.active : ''} />
             {watchLater?.length ? <Counter>{watchLater?.length}</Counter> : ''}
           </WatchLaterBtn>
         </ListsContainer>

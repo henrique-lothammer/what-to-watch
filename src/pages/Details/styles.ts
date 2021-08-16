@@ -99,6 +99,7 @@ export const WatchLaterBtn = styled.button`
   align-items: center;
   justify-content: space-around;
   width: 152px;
+  transition: 0.2s;
 `
 
 export const FavoriteBtn = styled.button`
@@ -117,6 +118,7 @@ export const FavoriteBtn = styled.button`
   align-items: center;
   justify-content: space-around;
   width: 119px;
+  transition: 0.2s;
 `
 
 export const ButtonsContainer = styled.div`

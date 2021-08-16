@@ -16,8 +16,12 @@ const Dashboard = (): ReactElement => {
       query: '/discover/movie?sort_by=popularity.desc',
     },
     {
-      title: 'In theaters',
+      title: 'New releases',
       query: `/discover/movie?primary_release_date.gte=${start}&primary_release_date.lte=${end}&sort_by=vote_average.desc`,
+    },
+    {
+      title: 'Best score',
+      query: `/discover/movie?sort_by=vote_average.desc&vote_count.gte=2000`,
     },
     {
       title: 'Top movies of last year',

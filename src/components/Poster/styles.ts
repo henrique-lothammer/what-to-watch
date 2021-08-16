@@ -20,6 +20,15 @@ export const Container = styled.li`
   &:first-child {
     margin-left: 0;
   }
+
+  &:hover {
+    img {
+      transform: scale(1.05);
+    }
+    article {
+      background: ${colors.primary};
+    }
+  }
 `
 
 export const Picture = styled.div`
@@ -31,10 +40,15 @@ export const Picture = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  img {
+    transition: 0.5s;
+    transform: scale(1);
+  }
 `
 
 export const Title = styled.article`
   color: ${colors.font};
+  background: ${colors.bgLighter};
   font-weight: bold;
   width: 100%;
   height: 75px;
@@ -42,6 +56,7 @@ export const Title = styled.article`
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.5s;
   h3 {
     font-size: 1.5rem;
     text-align: center;

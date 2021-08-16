@@ -11,7 +11,7 @@ const WatchLater: React.FC = () => {
   const movies = getAllWatchLater()
   return (
     <>
-      <HeaderBar />
+      <HeaderBar isWatchLaterPage />
       <div className='wrapper'>
         <main data-testid='watch-later'>
           <Title>Movies to Watch Later</Title>

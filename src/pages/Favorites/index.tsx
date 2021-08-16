@@ -11,7 +11,7 @@ const Favorites: React.FC = () => {
   const movies = getAllFavorites()
   return (
     <>
-      <HeaderBar />
+      <HeaderBar isFavoritePage />
       <div className='wrapper'>
         <main data-testid='favorites'>
           <Title>My Favorites</Title>
