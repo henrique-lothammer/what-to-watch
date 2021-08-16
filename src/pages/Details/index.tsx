@@ -1,15 +1,10 @@
-import React, { ReactElement, useEffect, useState } from 'react'
+import React, { ReactElement, useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { FaStar, FaClock } from 'react-icons/fa'
 import { getYear, parseISO } from 'date-fns'
 
 import Api from 'services/Api'
-import {
-  setFavorite,
-  getFavorite,
-  setWatchLater,
-  getWatchLater,
-} from 'services/Storage'
+import { ListsContext } from 'contexts/ListsContext'
 
 import HeaderBar from 'components/HeaderBar'
 import Footer from 'components/Footer'
@@ -17,7 +12,6 @@ import Score from 'components/Score'
 
 import noPicture from 'assets/no-picture.jpg'
 
-import { IMovieList } from 'components/types'
 import { colors } from 'styles/variables'
 import { IMovie, IMovieVideos } from '../types'
 import {
@@ -40,16 +34,15 @@ interface IParams {
 
 const Details = (): ReactElement => {
   const { id } = useParams<IParams>()
+  const { addToFavorites, addToWatchLater, favoriteList, watchLaterList } =
+    useContext(ListsContext)
 
   const [movie, setMovie] = useState<IMovie>({} as IMovie)
-  const [favorited, setFavorited] = useState<IMovieList | null>(() =>
-    getFavorite(Number(id))
-  )
-  const [doWatchLater, setDoWatchLater] = useState<IMovieList | null>(() =>
-    getWatchLater(Number(id))
-  )
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
+
+  const isInFavorites = favoriteList?.find((m) => m.id === movie.id)
+  const isInWatchLater = watchLaterList?.find((m) => m.id === movie.id)
 
   useEffect(() => {
     const getMovie = async () => {
@@ -91,14 +84,12 @@ const Details = (): ReactElement => {
     getMovie()
   }, [id])
 
-  const handleWatchLater = async () => {
-    await setWatchLater(movie)
-    setDoWatchLater(getWatchLater(Number(id)))
+  const handleWatchLater = () => {
+    addToWatchLater(movie)
   }
 
-  const handleFavorite = async () => {
-    await setFavorite(movie)
-    setFavorited(getFavorite(Number(id)))
+  const handleFavorite = () => {
+    addToFavorites(movie)
   }
 
   return (
@@ -140,22 +131,22 @@ const Details = (): ReactElement => {
                 <ButtonsContainer>
                   <WatchLaterBtn
                     onClick={handleWatchLater}
-                    watchLatered={!!doWatchLater}
+                    watchLatered={!!isInWatchLater}
                     title='Add to watch list'
                   >
                     <FaClock
-                      color={doWatchLater ? colors.active : colors.font}
+                      color={isInWatchLater ? colors.active : colors.font}
                       width={20}
                     />{' '}
                     Watch Later
                   </WatchLaterBtn>
                   <FavoriteBtn
                     onClick={handleFavorite}
-                    favorited={!!favorited}
+                    favorited={!!isInFavorites}
                     title='Add to favorites'
                   >
                     <FaStar
-                      color={favorited ? colors.active : colors.font}
+                      color={isInFavorites ? colors.active : colors.font}
                       width={20}
                     />{' '}
                     Favorite

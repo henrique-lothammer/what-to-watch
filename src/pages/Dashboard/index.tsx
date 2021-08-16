@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import { format, getYear, startOfWeek, endOfWeek } from 'date-fns'
+import { getYear } from 'date-fns'
 
 import HeaderBar from 'components/HeaderBar'
 import PostersSection from 'components/PostersSection'
@@ -7,17 +7,11 @@ import Footer from 'components/Footer'
 
 const Dashboard = (): ReactElement => {
   const today = new Date()
-  const start = format(startOfWeek(today), 'yyyy-MM-dd')
-  const end = format(endOfWeek(today), 'yyyy-MM-dd')
   const lastYear = getYear(today) - 1
   const sections = [
     {
       title: 'Most popular',
       query: '/discover/movie?sort_by=popularity.desc',
-    },
-    {
-      title: 'New releases',
-      query: `/discover/movie?primary_release_date.gte=${start}&primary_release_date.lte=${end}&sort_by=vote_average.desc`,
     },
     {
       title: 'Best score',

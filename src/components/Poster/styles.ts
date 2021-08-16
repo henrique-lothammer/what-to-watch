@@ -48,6 +48,7 @@ export const Picture = styled.div`
 
 export const Title = styled.article`
   color: ${colors.font};
+  position: relative;
   background: ${colors.bgLighter};
   font-weight: bold;
   width: 100%;
@@ -76,8 +77,43 @@ export const Score = styled.div`
   width: 36px;
   height: 36px;
   text-align: center;
-  text-align: center;
   font-size: 1.6rem;
   line-height: 2.6rem;
+  box-shadow: 0 0 1em #000;
+`
+
+export const ButtonFavorite = styled.div`
+  position: absolute;
+  background: ${colors.secondaryPressed};
+
+  color: ${colors.font};
+  border-radius: 100%;
+  top: 52px;
+  right: 5px;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 1em #000;
+`
+
+export const ButtonWatchLater = styled.div`
+  position: absolute;
+  background: ${colors.secondaryPressed};
+
+  color: ${colors.font};
+  border-radius: 100%;
+  top: 88px;
+  right: 5px;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 0 1em #000;
 `

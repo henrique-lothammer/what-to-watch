@@ -1,10 +1,10 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useContext } from 'react'
 import { FaStar, FaClock } from 'react-icons/fa'
 
 import SearchBox from 'components/SearchBox'
-import { getAllFavorites, getAllWatchLater } from 'services/Storage'
 
 import { colors } from 'styles/variables'
+import { ListsContext } from 'contexts/ListsContext'
 import logo from 'assets/logo.png'
 import {
   Container,
@@ -24,8 +24,7 @@ const HeaderBar = ({
   isFavoritePage = false,
   isWatchLaterPage = false,
 }: IProps): ReactElement => {
-  const favorites = getAllFavorites()
-  const watchLater = getAllWatchLater()
+  const { favoriteList, watchLaterList } = useContext(ListsContext)
 
   return (
     <Container>
@@ -37,11 +36,19 @@ const HeaderBar = ({
         <ListsContainer>
           <FavoriteBtn to='/favorites' title='Favorites'>
             <FaStar width={20} color={isFavoritePage ? colors.active : ''} />
-            {favorites?.length ? <Counter>{favorites.length}</Counter> : ''}
+            {favoriteList?.length ? (
+              <Counter>{favoriteList.length}</Counter>
+            ) : (
+              ''
+            )}
           </FavoriteBtn>
           <WatchLaterBtn to='/watchlater' title='Watch Later'>
             <FaClock width={20} color={isWatchLaterPage ? colors.active : ''} />
-            {watchLater?.length ? <Counter>{watchLater?.length}</Counter> : ''}
+            {watchLaterList?.length ? (
+              <Counter>{watchLaterList?.length}</Counter>
+            ) : (
+              ''
+            )}
           </WatchLaterBtn>
         </ListsContainer>
       </div>

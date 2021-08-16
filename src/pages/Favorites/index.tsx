@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ListsContext } from 'contexts/ListsContext'
 
 import Footer from 'components/Footer'
 import HeaderBar from 'components/HeaderBar'
 import PostersList from 'components/PostersList'
 
-import { getAllFavorites } from 'services/Storage'
 import { Title, Warning } from './styles'
 
 const Favorites: React.FC = () => {
-  const movies = getAllFavorites()
+  const { favoriteList: movies } = useContext(ListsContext)
   return (
     <>
       <HeaderBar isFavoritePage />

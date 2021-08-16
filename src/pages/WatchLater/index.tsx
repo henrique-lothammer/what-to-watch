@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ListsContext } from 'contexts/ListsContext'
 
 import Footer from 'components/Footer'
 import HeaderBar from 'components/HeaderBar'
 import PostersList from 'components/PostersList'
 
-import { getAllWatchLater } from 'services/Storage'
 import { Title, Warning } from './styles'
 
 const WatchLater: React.FC = () => {
-  const movies = getAllWatchLater()
+  const { watchLaterList: movies } = useContext(ListsContext)
   return (
     <>
       <HeaderBar isWatchLaterPage />
