@@ -4,7 +4,7 @@
 
 ## :computer: General info
 
-A website to search for movies when you don't know what to watch. ( :
+An app to search for movies when you don't know what to watch. ( :
 
 ## :cake: Features
 
@@ -40,5 +40,16 @@ And finally, run it:
 ```
 # Run the server
 $ yarn start
+
+```
+
+To run some tests:
+
+```
+# Run tests
+$ yarn test
+
+# Run tests coverage
+$ yarn coverage
 
 ```
