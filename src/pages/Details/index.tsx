@@ -133,6 +133,7 @@ const Details = (): ReactElement => {
                     onClick={handleWatchLater}
                     watchLatered={!!isInWatchLater}
                     title='Add to watch list'
+                    data-testid='add-to-watch-later'
                   >
                     <FaClock
                       color={isInWatchLater ? colors.active : colors.font}
@@ -144,6 +145,7 @@ const Details = (): ReactElement => {
                     onClick={handleFavorite}
                     favorited={!!isInFavorites}
                     title='Add to favorites'
+                    data-testid='add-to-favorite'
                   >
                     <FaStar
                       color={isInFavorites ? colors.active : colors.font}

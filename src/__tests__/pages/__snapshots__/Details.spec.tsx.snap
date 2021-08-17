@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Watch Later Page Should render 1`] = `
+exports[`Watch Later Page Should render a movie details and add it to lists 1`] = `
 .c2 {
   width: 400px;
   display: -webkit-box;
@@ -167,7 +167,7 @@ exports[`Watch Later Page Should render 1`] = `
 }
 
 .c8 {
-  background: url() no-repeat center center;
+  background: url(https://image.tmdb.org/t/p/original/iCi4c4FvVdbaU1t8poH1gvzT6xM.jpg) no-repeat center center;
   background-size: cover;
   box-shadow: inset 0 0 0 2000px rgb(0 0 0 / 71%);
   width: 100%;
@@ -499,7 +499,7 @@ exports[`Watch Later Page Should render 1`] = `
               class="c14"
             >
               <p>
-                No overview provided.
+                a good movie
               </p>
             </div>
           </article>
@@ -508,6 +508,7 @@ exports[`Watch Later Page Should render 1`] = `
           >
             <button
               class="c16"
+              data-testid="add-to-watch-later"
               title="Add to watch list"
             >
               <svg
@@ -530,6 +531,7 @@ exports[`Watch Later Page Should render 1`] = `
             </button>
             <button
               class="c17"
+              data-testid="add-to-favorite"
               title="Add to favorites"
             >
               <svg
@@ -561,7 +563,21 @@ exports[`Watch Later Page Should render 1`] = `
         allowfullscreen=""
         class="c18 youtube-player"
         frameborder="0"
-        src="https://www.youtube.com/embed/youtube-key?autoplay=0"
+        src="https://www.youtube.com/embed/youtube-key1?autoplay=0"
+        title="YouTube"
+      />
+      <iframe
+        allowfullscreen=""
+        class="c18 youtube-player"
+        frameborder="0"
+        src="https://www.youtube.com/embed/youtube-key2?autoplay=0"
+        title="YouTube"
+      />
+      <iframe
+        allowfullscreen=""
+        class="c18 youtube-player"
+        frameborder="0"
+        src="https://www.youtube.com/embed/youtube-key3?autoplay=0"
         title="YouTube"
       />
     </div>

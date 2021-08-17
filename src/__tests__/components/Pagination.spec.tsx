@@ -41,4 +41,48 @@ describe('Pagination Component', () => {
     fireEvent.click(getByTestId('button-prev'))
     expect(page).toStrictEqual(1)
   })
+
+  it('Should pagination work correctly when click buttons in left edge', () => {
+    let page = 1
+    function nextPage(p: number) {
+      page = p
+    }
+    function prevPage(p: number) {
+      page = p
+    }
+    const { getByTestId } = render(
+      <Pagination
+        totalPages={10}
+        page={page}
+        nextPage={nextPage}
+        prevPage={prevPage}
+      />
+    )
+    fireEvent.click(getByTestId('button-prev'))
+    expect(page).toStrictEqual(1)
+    fireEvent.click(getByTestId('button-next'))
+    expect(page).toStrictEqual(2)
+  })
+
+  it('Should pagination work correctly when click buttons in right edge', () => {
+    let page = 10
+    function nextPage(p: number) {
+      page = p
+    }
+    function prevPage(p: number) {
+      page = p
+    }
+    const { getByTestId } = render(
+      <Pagination
+        totalPages={10}
+        page={page}
+        nextPage={nextPage}
+        prevPage={prevPage}
+      />
+    )
+    fireEvent.click(getByTestId('button-next'))
+    expect(page).toStrictEqual(10)
+    fireEvent.click(getByTestId('button-prev'))
+    expect(page).toStrictEqual(9)
+  })
 })

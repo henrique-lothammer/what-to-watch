@@ -52,4 +52,33 @@ describe('PostersSection Component', () => {
       expect(getByText(/Star Wars/)).toBeInTheDocument()
     })
   })
+
+  it('Should render error when get no response', async () => {
+    const response = {
+      results: '',
+    }
+
+    const mockedResponse: AxiosResponse = {
+      data: response,
+      status: 404,
+      statusText: 'OK',
+      headers: {},
+      config: {},
+    }
+
+    mockedAxios.get.mockResolvedValueOnce(mockedResponse)
+
+    const { getByTestId, getByText } = render(
+      <PostersSection section={section} />
+    )
+
+    const element = getByTestId(/posters-section/i)
+    expect(element).toBeInTheDocument()
+    expect(mockedAxios.get).toHaveBeenCalledWith(section.query)
+    await waitFor(() => {
+      expect(
+        getByText(/Ops! An error ocurred. Please, try again later./i)
+      ).toBeInTheDocument()
+    })
+  })
 })

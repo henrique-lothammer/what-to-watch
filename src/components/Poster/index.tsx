@@ -58,10 +58,12 @@ const PosterSection = ({ movie, list = false }: IProp): ReactElement => {
               : noPicture
           }
           alt={movie.title}
+          data-testid='movie-picture'
         />
         <ButtonFavorite
           title='Add to favorite'
           onClick={(e) => handleFavorite(e, movie)}
+          data-testid='add-to-favorite'
         >
           <FaStar
             width={20}
@@ -73,6 +75,7 @@ const PosterSection = ({ movie, list = false }: IProp): ReactElement => {
         <ButtonWatchLater
           title='Add to watch later'
           onClick={(e) => handleWatchLater(e, movie)}
+          data-testid='add-to-watch-later'
         >
           <FaClock
             width={20}
